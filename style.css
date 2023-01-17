@@ -1,0 +1,16 @@
+html{
+  background-image: linear-gradient(#BA8B02, #181818);
+  height: 100%;
+}
+
+.all{
+  text-align: center;
+}
+
+
+.cookie1{
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
