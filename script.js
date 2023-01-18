@@ -8,7 +8,7 @@ var time = 30;
 var bonusPrice = 200;
 var multButton = document.querySelector('#buttonMult');
 
-multButton.setAttribute('disabled', true);
+// multButton.setAttribute('disabled', true);
 
 cookies.value = function butM(){
   if (cookies < price) {

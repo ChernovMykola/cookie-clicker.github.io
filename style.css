@@ -1,6 +1,6 @@
 html{
   background-image: linear-gradient(#BA8B02, #181818);
-  height: 120%;
+  height: 160%;
   overflow: hidden;
 }
 
@@ -15,9 +15,9 @@ html{
   align-items: center;
 
 }
-img.button{
-  height: 4%;
-  width: 4%;
+.button{
+  height: 6%;
+  width: 6%;
 }
 p{
   font-size: 30px;
@@ -42,9 +42,9 @@ p{
   .info{
     display: block;
   }
-  img.button{
-    height: 15%;
-    width: 15%;
+  .button{
+    height: 30%;
+    width: 30%;
   }
   html{
     overflow: scroll;
@@ -52,9 +52,9 @@ p{
 }
 
 @media screen and (min-width: 360px) and (max-width: 968px) {
-  img.button{
-    height: 15%;
-    width: 15%;
+  .button{
+    height: 20%;
+    width: 20%;
   }
   p{
     font-size: 20px;
