@@ -18,6 +18,7 @@ function bakeCookie(){
   examBonus()
 }
 
+
 function examMult(){
   if (cookies < price) {
   document.getElementById('buttonMult').disabled = true;
