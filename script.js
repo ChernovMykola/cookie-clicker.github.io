@@ -6,7 +6,17 @@ var autoPrice = 200;
 var autoClickVal = 0;
 var time = 30;
 var bonusPrice = 200;
+var multButton = document.querySelector('#buttonMult');
 
+multButton.setAttribute('disabled', true);
+
+cookies.value = function butM(){
+  if (cookies < price) {
+    multButtom.setAttribute('disabled', true);
+  }else{
+    multButtom.removeAttribute('disabled');
+  }
+}
 function bakeCookie(){
   cookies += cpc;
   document.getElementById('cookies-number').innerHTML = "Cookies: " + cookies;
@@ -14,23 +24,19 @@ function bakeCookie(){
 
 function hireBaker() {
   if (cookies >= price) {
-    if (bonus = false) {
+    if (secondsLeft === 30) {
       cpc += 1;
-    }else if (bonus = true) {
-      cpc+= 2;
-    }
-    cookies -= price;
-    if (bonus = false) {
       multiplier += 1;
-    }else if (bonus = true) {
+    }else if (secondsLeft < 30) {
+      cpc += 2;
       multiplier += 2;
     }
+    cookies -= price;
+
     price *= 2;
     document.getElementById('multiplier').innerHTML = "Multiplier x: " + multiplier;
     document.getElementById('cookies-number').innerHTML = "Cookies: " + cookies;
     document.getElementById('price').innerHTML = "You need for upgrade your multiplier: " + price;
-
-
   }else {
     alert('You need more cookies')
   }
@@ -60,19 +66,17 @@ var timerOn = false
 function bonus2() {
   if (cookies >= bonusPrice) {
     cookies -= bonusPrice;
-    multiplier *= 2
-    cpc *= 2
+    multiplier *= 2;
+    cpc *= 2;
     document.getElementById('multiplier').innerHTML = "Multiplier x: " + multiplier;
     alert('bonus enabled')
-    bonus = true;
     timerOn = true;
     startTimer()
     setTimeout(() => {
       multiplier *= 0.5;
-      cpc *= 0.5
+      cpc *= 0.5;
       document.getElementById('multiplier').innerHTML = "Multiplier x: " + multiplier;
       alert('bonus disabled');
-      bonus = false;
       timerOn = false;
     }, secondsLeft * 1000)
   }else {
@@ -93,6 +97,16 @@ function startTimer() {
           }
           document.getElementById('timerCounter').innerHTML = secondsLeft
       }, 1000);
+}
+
+multButtom.setAttribute('disabled', true);
+
+cookies.value = function butM(){
+  if (cookies < price) {
+    multButton.setAttribute('disabled', true);
+  }else{
+    multButton.removeAttribute('disabled');
+  }
 }
 
 // function bonus2() {

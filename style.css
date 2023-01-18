@@ -1,16 +1,68 @@
 html{
   background-image: linear-gradient(#BA8B02, #181818);
-  height: 100%;
+  height: 120%;
+  overflow: hidden;
 }
 
 .all{
   text-align: center;
 }
 
+.info{
+  margin: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+
+}
+img.button{
+  height: 4%;
+  width: 4%;
+}
+p{
+  font-size: 30px;
+  color: gray;
+}
+.pinf{
+  color: black;
+}
+
+.buttons{
+  margin: 40px;
+}
+
 
 .cookie1{
-  width: 25%;
+  width: 35%;
   margin-left: auto;
   margin-right: auto;
+}
 
+@media screen and (max-width: 359px) {
+  .info{
+    display: block;
+  }
+  img.button{
+    height: 15%;
+    width: 15%;
+  }
+  html{
+    overflow: scroll;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 968px) {
+  img.button{
+    height: 15%;
+    width: 15%;
+  }
+  p{
+    font-size: 20px;
+  }
+  .cookie1{
+    width: 75%;
+  }
+  html{
+    overflow: scroll;
+  }
 }
