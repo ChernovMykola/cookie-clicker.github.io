@@ -52,6 +52,9 @@ p{
 }
 
 @media screen and (min-width: 360px) and (max-width: 968px) {
+  .all{
+    margin-top: 70px;
+  }
   .button{
     height: 20%;
     width: 20%;

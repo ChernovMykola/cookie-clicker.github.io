@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3">
-    <title></title>
+    <title>Cookie Clicker!</title>
   </head>
   <body>
     <section class="all">
@@ -19,11 +19,11 @@
         <input type="image" src="imgbin_chocolate-icon-png.png" class="button" id="buttonMult" name="Hire a Baker" onclick="hireBaker()">
         <p id="price">You need for upgrade your multiplier: 20</p>
         <!-- <img src="/Users/mykolachernov/CookieClicker/68710-irish-cappuccino-cup-coffee-cheers-cafe-cartoon.png" alt="" class="button" name="Auto Click" onclick="autoCookie()"> -->
-        <input type="image" src="68710-irish-cappuccino-cup-coffee-cheers-cafe-cartoon.png" class="button" name="Auto Click" onclick="autoCookie()">
+        <input type="image" src="68710-irish-cappuccino-cup-coffee-cheers-cafe-cartoon.png" id="autoClick" class="button" name="Auto Click" onclick="autoCookie()">
         <p id="autoPrice">You need for buy auto-cliker: 200</p>
         <!-- <img src="/Users/mykolachernov/CookieClicker/SeekPng.com_milk-background-png_2454985.png" alt="" class="button" name="Timer" onclick="bonus2()"> -->
-        <input type="image" src="SeekPng.com_milk-background-png_2454985.png" class="button" name="Timer" onclick="bonus2()">
-        <p id="timer">You have: <span id="timerCounter">30</span>s</p>
+        <input type="image" src="SeekPng.com_milk-background-png_2454985.png" id="bonusClick" class="button" name="Timer" onclick="bonus2()">
+        <p id="timer">You have: <span id="timerCounter">30</span>s, but you need 200cookies</p>
        </div>
     </section>
     <script src="script.js"></script>
