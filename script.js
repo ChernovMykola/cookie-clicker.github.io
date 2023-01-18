@@ -45,24 +45,62 @@ function autoCookie(){
   }
 }
 
-function bonus(){
-  bonusOn = true;
-  multiplier *= 2;
-  cpc *= 2;
+var secondsLeft = 30
+var timerOn = false
+
+function bonus2() {
+  multiplier *= 2
+  cpc *= 2
+  alert('bonus enabled')
+  timerOn = true;
+  startTimer()
+  setTimeout(() => {
+    multiplier *= 0.5;
+    cpc *= 0.5
+    alert('bonus disabled');
+    timerOn = false;
+  }, secondsLeft * 1000)
 }
 
-function disableBonus(){
-  bonusOn = false;
-  multiplier *= 0.5;
-  cpc *= 0.5;
-  time = 30;
+function startTimer() {
+    setInterval(
+        function () {
+        secondsLeft -= 1
+          document.getElementById('timerCounter').innerHTML = secondsLeft
+      }, 1000);
 }
 
-if (bonusOn) {
-  time--;
-}else if (time === 0) {
-  disableBonus()
-}
+// function bonus2() {
+//   multiplier *= 2;
+//   cpc *= 2;
+//   alert('bonus enabled')
+//   document.getElementById('multiplier').innerHTML = "Multiplier x: " + multiplier;
+//   setTimeout(() => {
+//     multiplier *= 0.5;
+//     cpc *= 0.5;
+//     alert('bonus disabled');
+//     document.getElementById('multiplier').innerHTML = "Multiplier x: " + multiplier;
+//   }, 30000)
+// }
+
+// function bonus(){
+//   bonusOn = true;
+//   multiplier *= 2;
+//   cpc *= 2;
+// }
+//
+// function disableBonus(){
+//   bonusOn = false;
+//   multiplier *= 0.5;
+//   cpc *= 0.5;
+//   time = 30;
+// }
+//
+// if (bonusOn) {
+//   time--;
+// }else if (time === 0) {
+//   disableBonus()
+// }
 
 
 // function bonuS(){
