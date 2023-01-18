@@ -5,8 +5,7 @@ var price = 20;
 var autoPrice = 200;
 var autoClickVal = 0;
 var time = 30;
-var bonusPrice = 20;
-var bonus_kf = 1;
+var bonusPrice = 200;
 
 function bakeCookie(){
   cookies += cpc;
@@ -15,13 +14,23 @@ function bakeCookie(){
 
 function hireBaker() {
   if (cookies >= price) {
-    cpc += 1;
+    if (bonus = false) {
+      cpc += 1;
+    }else if (bonus = true) {
+      cpc+= 2;
+    }
     cookies -= price;
-    multiplier += 1;
+    if (bonus = false) {
+      multiplier += 1;
+    }else if (bonus = true) {
+      multiplier += 2;
+    }
     price *= 2;
     document.getElementById('multiplier').innerHTML = "Multiplier x: " + multiplier;
     document.getElementById('cookies-number').innerHTML = "Cookies: " + cookies;
     document.getElementById('price').innerHTML = "You need for upgrade your multiplier: " + price;
+
+
   }else {
     alert('You need more cookies')
   }
@@ -49,23 +58,39 @@ var secondsLeft = 30
 var timerOn = false
 
 function bonus2() {
-  multiplier *= 2
-  cpc *= 2
-  alert('bonus enabled')
-  timerOn = true;
-  startTimer()
-  setTimeout(() => {
-    multiplier *= 0.5;
-    cpc *= 0.5
-    alert('bonus disabled');
-    timerOn = false;
-  }, secondsLeft * 1000)
-}
+  if (cookies >= bonusPrice) {
+    cookies -= bonusPrice;
+    multiplier *= 2
+    cpc *= 2
+    document.getElementById('multiplier').innerHTML = "Multiplier x: " + multiplier;
+    alert('bonus enabled')
+    bonus = true;
+    timerOn = true;
+    startTimer()
+    setTimeout(() => {
+      multiplier *= 0.5;
+      cpc *= 0.5
+      document.getElementById('multiplier').innerHTML = "Multiplier x: " + multiplier;
+      alert('bonus disabled');
+      bonus = false;
+      timerOn = false;
+    }, secondsLeft * 1000)
+  }else {
+    alert('You need more cookies')
+  }
+  }
+
 
 function startTimer() {
-    setInterval(
+    refreshIntervalId = setInterval(
         function () {
-        secondsLeft -= 1
+          if (secondsLeft >= 0) {
+            secondsLeft -= 1
+          }
+          if (secondsLeft === 0) {
+             secondsLeft = 30;
+             clearInterval(refreshIntervalId);
+          }
           document.getElementById('timerCounter').innerHTML = secondsLeft
       }, 1000);
 }
